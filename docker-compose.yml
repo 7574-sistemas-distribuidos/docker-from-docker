@@ -1,0 +1,14 @@
+version: '2.1'
+services:
+  nginx:
+    image: nginx
+    ports:
+      - 10080:80
+
+
+  timer:
+    build:
+      context: timer
+      dockerfile: Dockerfile
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
